@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button';
 import PaletteFormNav from './PaletteFormNav';
 import DraggableColorList from './DragabbleColorList';
 import ColorPickerForm from './ColorPickerForm';
+import seedColors from './seedColors'
 //import { arrayMove } from 'react-sortable-hoc';
 
 const arrayMove = require('array-move');
@@ -139,7 +140,7 @@ export default function NewPaletteForm(props) {
 		insertColor([]);
 	};
 	const addRandomColor = () => {
-		const allColors = props.palettes.map((p) => p.colors).flat();
+		const allColors = seedColors.map((p) => p.colors).flat();
 		let rand = Math.floor(Math.random() * allColors.length);
 		let rcolor = allColors[rand];
 		while (colors.indexOf(rcolor) !== -1) {
